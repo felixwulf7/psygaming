@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Language } from '../config/languages';
-import { getTranslation, TranslationKey } from '../utils/translations';
 
 interface HeroProps {
   lang: Language;
@@ -20,7 +19,6 @@ interface HeroProps {
 }
 
 export default function Hero({
-  lang,
   title,
   subtitle,
   ctaText,
@@ -34,8 +32,6 @@ export default function Hero({
   align = 'center',
   size = 'large',
 }: HeroProps) {
-  const t = (key: TranslationKey) => getTranslation(key, lang);
-
   const alignmentClasses = {
     left: 'text-left items-start',
     center: 'text-center items-center',

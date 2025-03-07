@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getServiceBySlug, services, ServiceId } from '@/app/config/services';
 import { getGameBySlug, games, GameId } from '@/app/config/games';
-import { getTranslation, TranslationKey } from '@/app/utils/translations';
+import { getTranslation, TranslationKey, getServiceSlug } from '@/app/utils/translations';
 import { generateServiceGameMetadata } from '@/app/utils/metadata';
 import { 
   getFeatureTitle, 
@@ -135,7 +135,7 @@ export default function ServiceGamePage({ params }: PageProps) {
     // Try to get the translation from the main translations
     try {
       return getTranslation(key as TranslationKey, lang as 'en' | 'de');
-    } catch (e) {
+    } catch {
       // If not found, try to get it from custom translations
       return customTranslations[lang]?.[key] || key;
     }
@@ -224,6 +224,9 @@ export default function ServiceGamePage({ params }: PageProps) {
         serviceName={service.names[lang as 'en' | 'de']}
         gameName={game.names[lang as 'en' | 'de']}
         imagePath={heroImage}
+        lang={lang as 'en' | 'de'}
+        ctaLink={`/${lang}/contact`}
+        secondaryCtaLink={`/${lang}/${getServiceSlug(serviceId, lang as 'en' | 'de')}`}
       />
       
       {/* Feature Sections */}

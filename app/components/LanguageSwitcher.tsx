@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter, usePathname } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { Language, languages, availableLanguages } from '../config/languages';
 
@@ -12,7 +12,6 @@ interface LanguageSwitcherProps {
 
 export default function LanguageSwitcher({ currentLang, className = '' }: LanguageSwitcherProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const router = useRouter();
   const pathname = usePathname();
 
   // Function to get the equivalent path in another language

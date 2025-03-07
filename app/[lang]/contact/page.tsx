@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { Metadata } from 'next';
 import { Language, isValidLanguage } from '../../config/languages';
 import { getTranslation, TranslationKey } from '../../utils/translations';

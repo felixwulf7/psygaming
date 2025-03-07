@@ -9,7 +9,6 @@ interface ContentBlockProps {
   imagePosition?: 'left' | 'right' | 'background' | 'none';
   backgroundColor?: string;
   textColor?: string;
-  accentColor?: string;
   withIcon?: boolean;
   icon?: ReactNode;
   fullWidth?: boolean;
@@ -23,7 +22,6 @@ export default function ContentBlock({
   imagePosition = 'left',
   backgroundColor = 'bg-white dark:bg-neutral-900',
   textColor = 'text-neutral-900 dark:text-white',
-  accentColor = 'bg-primary-800',
   withIcon = false,
   icon,
   fullWidth = false,

@@ -50,7 +50,7 @@ export default function ContactForm({ lang }: ContactFormProps) {
       setTimeout(() => {
         setFormStatus('idle');
       }, 5000);
-    } catch (error) {
+    } catch {
       setFormStatus('error');
       
       // Reset status after 5 seconds

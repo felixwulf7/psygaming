@@ -114,7 +114,7 @@ export default function Footer({ lang }: FooterProps) {
               {gameIds.map((gameId) => (
                 <li key={gameId}>
                   <Link
-                    href={`/${lang}/games/${getGameSlug(gameId, lang)}`}
+                    href={`/${lang}/${getServiceSlug('therapeutic', lang)}/${getGameSlug(gameId, lang)}`}
                     className="text-neutral-400 hover:text-white transition-colors"
                   >
                     {getGameName(gameId, lang)}

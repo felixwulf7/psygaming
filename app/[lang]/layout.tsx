@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { Language, isValidLanguage, defaultLanguage } from '../config/languages';
+import { Language, isValidLanguage } from '../config/languages';
 import { generateHomeMetadata } from '../utils/metadata';
 
 interface LanguageLayoutProps {

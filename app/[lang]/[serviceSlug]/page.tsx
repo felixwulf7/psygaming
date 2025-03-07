@@ -1,11 +1,10 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Language, isValidLanguage } from '../../config/languages';
 import { services, ServiceId, getServiceBySlug } from '../../config/services';
 import { gameIds } from '../../config/games';
-import { getServiceSlug, getServiceName, getGameSlug, getGameName, getTranslation, TranslationKey } from '../../utils/translations';
+import { getServiceSlug, getGameSlug, getGameName, getTranslation, TranslationKey } from '../../utils/translations';
 import { generateServiceMetadata } from '../../utils/metadata';
 import Hero from '../../components/Hero';
 import SectionTitle from '../../components/SectionTitle';

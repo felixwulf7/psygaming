@@ -1,5 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { getTranslation, TranslationKey } from '../../utils/translations';
 
 interface HeroSectionProps {
   title: string;
@@ -7,6 +9,9 @@ interface HeroSectionProps {
   serviceName: string;
   gameName: string;
   imagePath: string;
+  lang?: 'en' | 'de';
+  ctaLink?: string;
+  secondaryCtaLink?: string;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
@@ -15,7 +20,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   serviceName,
   gameName,
   imagePath,
+  lang = 'en',
+  ctaLink = '#',
+  secondaryCtaLink = '#',
 }) => {
+  const t = (key: TranslationKey) => getTranslation(key, lang);
   return (
     <section className="relative min-h-[60vh] flex items-center overflow-hidden">
       {/* Background image with overlay */}
@@ -41,12 +50,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">{title}</h1>
           <p className="text-xl text-gray-200 mb-8">{subtitle}</p>
           <div className="flex flex-wrap gap-4">
-            <button className="bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-300">
-              Get Started
-            </button>
-            <button className="bg-transparent border-2 border-white text-white hover:bg-white/10 font-semibold py-3 px-8 rounded-lg transition duration-300">
-              Learn More
-            </button>
+            <Link href={ctaLink} className="bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-300">
+              {t('getStarted')}
+            </Link>
+            <Link href={secondaryCtaLink} className="bg-transparent border-2 border-white text-white hover:bg-white/10 font-semibold py-3 px-8 rounded-lg transition duration-300">
+              {t('learnMore')}
+            </Link>
           </div>
         </div>
       </div>
