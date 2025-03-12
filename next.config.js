@@ -1,15 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: false,
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'psygaminglab.com',
-        pathname: '/**',
-      },
-    ],
-  },
+  reactStrictMode: true,
+  swcMinify: true,
 };
 
 module.exports = nextConfig;
